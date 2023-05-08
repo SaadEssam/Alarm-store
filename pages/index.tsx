@@ -1,9 +1,17 @@
 import React from "react";
 import { sanityClient } from "@/lib/sanity";
 import HeroBanner from "@/components/HeroBanner";
+import Product from "@/components/Product";
 
-type Product = {
-  // Define your product type here
+type Products = {
+  Name: string;
+  _id: string;
+  Image: string;
+  Slug: {
+    current: string;
+  }
+  Price: number;
+  Details: string;
 };
 
 type Banner = {
@@ -17,7 +25,7 @@ type Banner = {
 };
 
 type HomeProps = {
-  products: Product[];
+  products: Products[];
   bannerData: Banner[];
 };
 
@@ -25,6 +33,15 @@ const Home = ({ products, bannerData }: HomeProps) => {
   return (
     <div>
       <HeroBanner heroBanner={bannerData.length && bannerData[0]} />
+      <div className="products-heading">
+        <h2>Best Seller Products</h2>
+        <p>speaker there are many variations passages</p>
+      </div>
+      <div className="products-container">
+        {products?.map((product) => (
+          <Product key={product._id} product={product} />
+        ))}
+      </div>
     </div>
   );
 };
