@@ -11,8 +11,8 @@ const HeroBanner = ({ heroBanner }: any) => {
         <h3>{heroBanner.midText}</h3>
         <h1>{heroBanner.largeText1}</h1>
         <img
-          src={urlFor(heroBanner.image)}
-          alt=""
+          src={urlFor(heroBanner.image).url()}
+          alt="banner image"
           className="hero-banner-image"
         />
 
@@ -21,7 +21,7 @@ const HeroBanner = ({ heroBanner }: any) => {
             <button type="button">{heroBanner.buttonText}</button>
           </Link>
           <div className="desc">
-            <h5>description</h5>
+            <h5>Description</h5>
             <p>{heroBanner.description}</p>
           </div>
         </div>
