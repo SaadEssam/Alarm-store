@@ -2,6 +2,8 @@ import React from "react";
 import { sanityClient } from "@/lib/sanity";
 import HeroBanner from "@/components/HeroBanner";
 import Product from "@/components/Product";
+import FooterBanner from "@/components/FooterBanner";
+import Footer from "@/components/Footer";
 
 type Products = {
   Name: string;
@@ -32,7 +34,7 @@ type HomeProps = {
 const Home = ({ products, bannerData }: HomeProps) => {
   return (
     <div>
-      <HeroBanner heroBanner={bannerData.length && bannerData[0]} />
+      <HeroBanner heroBanner={bannerData.length && bannerData[1]} />
       <div className="products-heading">
         <h2>Best Seller Products</h2>
         <p>speaker there are many variations passages</p>
@@ -42,6 +44,8 @@ const Home = ({ products, bannerData }: HomeProps) => {
           <Product key={product._id} product={product} />
         ))}
       </div>
+      <FooterBanner footerBanner={bannerData && bannerData[0]} />
+      <Footer />
     </div>
   );
 };

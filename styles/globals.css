@@ -26,10 +26,20 @@ a {
 .hero-banner-container .product-name {
   font-size: 20px;
 }
-.hero-banner-container button {
+.hero-banner-container button,
+.footer-banner-container button {
   border-radius: 15px;
   padding: 10px 16px;
-  background-color: #f02d34;
+  /* background-color: #f02d34; */
+  background: linear-gradient(
+    157.81deg,
+    #fadede -43.27%,
+    #f5bebe -21.24%,
+    #f09d9d 12.19%,
+    #eb7d83 29.82%,
+    #e65c5c 51.94%,
+    #cf3333 90.29%
+  );
   color: white;
   border: none;
   margin-top: 40px;
@@ -103,6 +113,7 @@ a {
   transform: scale(1, 1);
   transition: transform 0.5s ease;
   color: #324d67;
+  padding-bottom: 25px;
 }
 .product-card:hover {
   transform: scale(1.1, 1.1);
@@ -120,4 +131,52 @@ a {
   font-weight: 800;
   margin-top: 6px;
   color: black;
+}
+
+/* Footer Banner */
+.footer-banner-container{
+  padding: 100px 40px;
+  background-color: #f02d34;
+  border-radius: 15px;
+  position: relative;
+  height: 400px;
+  line-height: 1; 
+  color: white;
+  width: 100%;
+  margin-top: 120px;
+  margin-bottom: 120px;
+}
+.banner-desc{
+  display: flex ;
+  justify-content: space-between;
+}
+
+.banner-desc .left h3{
+  font-weight: 900;
+  font-size: 80px;
+  margin-left: 25px;
+}
+.banner-desc .left p{
+  margin:18px;
+}
+.footer-banner-image{
+  position: absolute;
+  top: -15%;
+  right: 35%;
+  width: 500px;
+  height: 520px;
+}
+.banner-desc .right{
+  line-height: 1.4;
+}
+.banner-desc .right h3{
+  font-weight: 800;
+  font-size: 60px;
+}
+.banner-desc .right p{
+  font-size: 18px;
+}
+.banner-desc .right .company-desc{
+  font-size: 14px;
+  font-weight: 300;
 }
