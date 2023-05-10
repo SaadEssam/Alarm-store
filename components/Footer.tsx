@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { BsInstagram, BsFacebook, BsTwitter, BsLinkedin } from "react-icons/bs";
 
 const Footer = () => {
@@ -6,7 +7,9 @@ const Footer = () => {
     <div className="footer">
       <div className="footer-links">
         <div className="footer-links_logo">
-          {/* <img src="" alt="logo" /> */}
+          <Link href="/">
+            <img src="/assets/logo.png" alt="logo" />
+          </Link>
           <p>
             The Apple items, solutions or devices are located at the alarm shop.
           </p>

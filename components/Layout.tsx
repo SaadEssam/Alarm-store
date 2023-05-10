@@ -9,7 +9,6 @@ type Props = {
 };
 const Layout = ({ children }: Props) => {
   return (
-    <>
       <div className="layout">
         <Head>
           <title>Alarm Store</title>
@@ -18,11 +17,10 @@ const Layout = ({ children }: Props) => {
           <Navbar />
         </header>
         <main className="main-container">{children}</main>
+        <footer>
+          <Footer />
+        </footer>
       </div>
-      <footer>
-        <Footer />
-      </footer>
-    </>
   );
 };
 
