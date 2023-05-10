@@ -45,7 +45,7 @@ const Home = ({ products, bannerData }: HomeProps) => {
         ))}
       </div>
       <FooterBanner footerBanner={bannerData && bannerData[0]} />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

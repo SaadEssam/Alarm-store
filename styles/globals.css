@@ -14,6 +14,16 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+.main-container {
+  max-width: 1400px;
+  margin: auto;
+  width: 100%;
+}
+.layout {
+  padding: 10px;
+}
+
 .hero-banner-container {
   padding: 100px 40px;
   background-color: #dcdcdc;
@@ -84,7 +94,6 @@ a {
   margin-bottom: 12px;
   font-weight: 700;
   font-size: 16px;
-  /* color: black; */
   align-self: flex-end;
 }
 .products-heading {
@@ -134,49 +143,49 @@ a {
 }
 
 /* Footer Banner */
-.footer-banner-container{
+.footer-banner-container {
   padding: 100px 40px;
   background-color: #f02d34;
   border-radius: 15px;
   position: relative;
   height: 400px;
-  line-height: 1; 
+  line-height: 1;
   color: white;
   width: 100%;
   margin-top: 120px;
   margin-bottom: 120px;
 }
-.banner-desc{
-  display: flex ;
+.banner-desc {
+  display: flex;
   justify-content: space-between;
 }
 
-.banner-desc .left h3{
+.banner-desc .left h3 {
   font-weight: 900;
   font-size: 80px;
   margin-left: 25px;
 }
-.banner-desc .left p{
-  margin:18px;
+.banner-desc .left p {
+  margin: 18px;
 }
-.footer-banner-image{
+.footer-banner-image {
   position: absolute;
   top: -15%;
   right: 35%;
   width: 500px;
   height: 520px;
 }
-.banner-desc .right{
+.banner-desc .right {
   line-height: 1.4;
 }
-.banner-desc .right h3{
+.banner-desc .right h3 {
   font-weight: 800;
   font-size: 60px;
 }
-.banner-desc .right p{
+.banner-desc .right p {
   font-size: 18px;
 }
-.banner-desc .right .company-desc{
+.banner-desc .right .company-desc {
   font-size: 14px;
   font-weight: 300;
 }
@@ -184,7 +193,6 @@ a {
 /* Footer Styles */
 
 .footer {
-  /* color: black; */
   background-color: #dcdcdc;
   display: flex;
   flex-direction: column;
