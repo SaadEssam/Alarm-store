@@ -3,35 +3,11 @@ import { sanityClient } from "@/lib/sanity";
 import HeroBanner from "@/components/HeroBanner";
 import Product from "@/components/Product";
 import FooterBanner from "@/components/FooterBanner";
-import Footer from "@/components/Footer";
+// import Footer from "@/components/Footer";
 
-type Products = {
-  Name: string;
-  _id: string;
-  Image: string;
-  Slug: {
-    current: string;
-  }
-  Price: number;
-  Details: string;
-};
+import { Products, Banner, HomeProps } from "@/typings";
 
-type Banner = {
-  smallText: string;
-  midText: string;
-  largeText1: string;
-  image: string;
-  product: string;
-  buttonText: string;
-  description: string;
-};
-
-type HomeProps = {
-  products: Products[];
-  bannerData: Banner[];
-};
-
-const Home = ({ products, bannerData }: HomeProps) => {
+const Home: React.FC<HomeProps> = ({ products, bannerData }) => {
   return (
     <div>
       <HeroBanner heroBanner={bannerData.length && bannerData[1]} />
@@ -52,10 +28,10 @@ const Home = ({ products, bannerData }: HomeProps) => {
 
 export const getServerSideProps = async () => {
   const query = '*[_type == "product"]';
-  const products = await sanityClient.fetch(query);
+  const products: Products[] = await sanityClient.fetch(query);
 
   const bannerQuery = '*[_type == "banner"]';
-  const bannerData = await sanityClient.fetch(bannerQuery);
+  const bannerData: Banner[] = await sanityClient.fetch(bannerQuery);
 
   return {
     props: { products, bannerData },
