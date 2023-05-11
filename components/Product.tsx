@@ -9,7 +9,7 @@ const Product = ({ product }: any) => {
         <div className="product-card">
           <img
             src={urlFor(product.image && product.image[0]).url()}
-            alt="product image"
+            alt={product.name}
             width={250}
             height={250}
             className="product-image"
