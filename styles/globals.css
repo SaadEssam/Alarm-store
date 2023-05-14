@@ -1,12 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;700&family=Poppins:wght@300;400;500;600&display=swap");
+
 html,
 body,
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
+  font-family: "IBM Plex Sans", sans-serif;
 }
+
+body {
+  background-color: #f9f5ff;
+}
+
 ::-webkit-scrollbar {
   width: 0px;
 }
@@ -26,7 +34,7 @@ a {
   align-items: center;
   justify-content: space-between;
   /* margin: 6px 18px; */
-  /* position: fixed; */
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -70,7 +78,18 @@ a {
 
 .hero-banner-container {
   padding: 100px 40px;
-  background-color: #dcdcdc;
+  background: #ee9ca7; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffdde1,
+    #ee9ca7
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffdde1,
+    #ee9ca7
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   border-radius: 15px;
   position: relative;
   height: 500px;
@@ -192,7 +211,7 @@ a {
   display: flex;
   gap: 40px;
   margin: 40px;
-  margin-top: 60px;
+  margin-top: 100px;
   color: #324d67;
 }
 
@@ -243,7 +262,7 @@ a {
   font-weight: 700;
   font-size: 26px;
   margin-top: 30px;
-  color: #f02d34; 
+  color: #f02d34;
 }
 /* .price .old-price,
 .product-price .old-price,
@@ -267,19 +286,20 @@ a {
   margin-top: 40px;
   font-size: 18px;
   font-weight: 500;
-  background-color: white;
+  background: transparent;
   color: #f02d34;
   cursor: pointer;
   width: 200px;
-  transform: scale(1, 1);
-  transition: transform 0.5s ease;
+  border-radius: 25px;
+
 }
 .buttons .add-to-cart:hover {
-  transform: scale(1.1, 1.1);
+  border: 1px solid #f02d33d3;
+  color: #f02d33d3;
 }
+
 .buttons .buy-now {
   width: 200px;
-
   padding: 10px 20px;
   background-color: #f02d34;
   color: white;
@@ -288,11 +308,10 @@ a {
   font-size: 18px;
   font-weight: 500;
   cursor: pointer;
-  transform: scale(1, 1);
-  transition: transform 0.5s ease;
+  border-radius: 25px;
 }
 .buttons .buy-now:hover {
-  transform: scale(1.1, 1.1);
+  background-color: #f02d33d3;
 }
 .quantity-desc {
   border: 1px solid gray;
@@ -318,15 +337,21 @@ a {
 /* Footer Banner */
 .footer-banner-container {
   padding: 100px 40px;
-  background-color: #f02d34;
+  /* background-color: #f02d34; */
   border-radius: 15px;
   position: relative;
   height: 400px;
   line-height: 1;
-  color: white;
   width: 100%;
   margin-top: 120px;
   margin-bottom: 120px;
+  /**/
+  /* border: 1px solid hsl(0, 100%, 50%); */
+  background: url(/assets/footer-banner.png);
+
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  color: black;
 }
 .banner-desc {
   display: flex;
@@ -366,7 +391,7 @@ a {
 /* Footer Styles */
 
 .footer {
-  background-color: #dcdcdc;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -421,7 +446,8 @@ a {
 }
 
 .footer-links_div p {
-  font-size: 12px;
+  font-size: 13px;
+  font-weight: 500;
   line-height: 14px;
   color: black;
   margin: 0.5rem 0;
