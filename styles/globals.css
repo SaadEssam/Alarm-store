@@ -206,7 +206,7 @@ a {
   color: black;
 }
 
-/* Product Details */
+/* Product Details Page */
 .product-detail-container {
   display: flex;
   gap: 40px;
@@ -225,7 +225,7 @@ a {
   transition: 0.3s ease-in-out;
 }
 .product-detail-image:hover {
-  background-color: #f02d34;
+  background-color: #f4dcdc;
 }
 .small-images-container {
   display: flex;
@@ -241,7 +241,7 @@ a {
 }
 
 .selected-image {
-  background-color: #f02d34;
+  background-color: #f4dcdc;
 }
 .reviews {
   color: #f02d34;
@@ -291,7 +291,6 @@ a {
   cursor: pointer;
   width: 200px;
   border-radius: 25px;
-
 }
 .buttons .add-to-cart:hover {
   border: 1px solid #f02d33d3;
@@ -332,6 +331,48 @@ a {
 }
 .quantity-desc .plus {
   color: rgb(49, 168, 49);
+}
+
+/* related products section */
+.related-products-wrapper {
+  margin-top: 120px;
+}
+.related-products-wrapper h2 {
+  text-align: center;
+  font-size: 28px;
+  text-transform: capitalize;
+  color: #324d67;
+  margin: 50px;
+}
+.marquee {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  overflow-x: hidden;
+}
+.track {
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 15s linear infinite;
+  width: 180%;
+}
+.track:hover {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.related-products-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
 }
 
 /* Footer Banner */
