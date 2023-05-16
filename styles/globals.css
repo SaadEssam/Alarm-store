@@ -293,8 +293,9 @@ a {
   border-radius: 25px;
 }
 .buttons .add-to-cart:hover {
-  border: 1px solid #f02d33d3;
-  color: #f02d33d3;
+  background: #f02d34;
+  color: white;
+  transition: 0.4s ease-in-out;
 }
 
 .buttons .buy-now {
@@ -528,6 +529,44 @@ a {
   transition: 0.5s ease;
 }
 
+/* 404 Error Page */
+.error404 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin: 40px;
+  height: 100vh;
+}
+.error404 h1 {
+  background: linear-gradient(85.74deg, #ED213A 22.71%, #93291E 75.62%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 300px;
+  line-height: 300px;
+  font-weight: 600;
+}
+.error404 h3 {
+  font-size: 25px;
+  letter-spacing: 1px;
+}
+.error404 .Go-Home {
+  padding: 10px 20px;
+  border: 2px solid #ED213A;
+  border-radius: 25px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #ED213A;
+  margin-bottom: 80px;
+}
+.error404 .Go-Home:hover {
+  background: #ED213A;
+  color: white;
+  transition: 0.3s ease-in-out;
+}
+
 @media screen and (max-width: 800px) {
   .hero-banner-container {
     height: 560px;
@@ -585,9 +624,6 @@ a {
   .desc {
     bottom: 60px;
   }
-  .product-detail-container {
-    flex-wrap: wrap;
-  }
   .product-detail-container .product-detail-image {
     width: 350px;
     height: 350px;
@@ -614,9 +650,6 @@ a {
   }
   .buttons .buy-now {
     width: 150px;
-  }
-  .product-detail-container {
-    margin: 20px;
   }
 
   .item-desc .flex {
