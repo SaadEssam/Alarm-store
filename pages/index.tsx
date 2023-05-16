@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import { sanityClient } from "@/lib/sanity";
 import HeroBanner from "@/components/HeroBanner";
 import Product from "@/components/Product";
@@ -10,6 +11,13 @@ import { Products, Banner, HomeProps } from "@/typings";
 const Home: React.FC<HomeProps> = ({ products, bannerData }) => {
   return (
     <div>
+      <Head>
+        <title>Alarm Store</title>
+        <meta
+          name="description"
+          content="The Apple items, solutions or devices are located at the alarm shop."
+        />
+      </Head>
       <HeroBanner heroBanner={bannerData.length && bannerData[1]} />
       <div className="products-heading">
         <h2>Best Seller Products</h2>

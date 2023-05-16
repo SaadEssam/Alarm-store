@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Head from "next/head";
 import {
   AiOutlineMinus,
   AiOutlinePlus,
@@ -13,6 +14,10 @@ const ProductDetails: React.FC<Products> = ({ product, products }: any) => {
   const [index, setIndex] = useState(0);
   return (
     <div>
+      <Head>
+        <title>{product.name} | Alarm Store</title>
+        <meta name="description" content={`Check out '${product.details}'.`} />
+      </Head>
       <div className="product-detail-container">
         <div>
           <div className="image-container">
