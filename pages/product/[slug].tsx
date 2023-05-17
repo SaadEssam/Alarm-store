@@ -7,11 +7,14 @@ import {
   AiOutlineStar,
 } from "react-icons/ai";
 import { sanityClient, urlFor } from "@/lib/sanity";
-import { Products } from "@/typings";
+import { Products, StateContextProps } from "@/typings";
 import Product from "@/components/Product";
+import { useStateContext } from "@/context/StateContext";
 
 const ProductDetails: React.FC<Products> = ({ product, products }: any) => {
   const [index, setIndex] = useState(0);
+  const { decQty, incQty, qty }: StateContextProps = useStateContext();
+
   return (
     <div>
       <Head>
@@ -58,11 +61,11 @@ const ProductDetails: React.FC<Products> = ({ product, products }: any) => {
           <div className="quantity">
             <h3>Quantity:</h3>
             <p className="quantity-desc">
-              <span className="minus">
+              <span className="minus" onClick={decQty}>
                 <AiOutlineMinus />
               </span>
-              <span className="num">1</span>
-              <span className="plus">
+              <span className="num">{qty}</span>
+              <span className="plus" onClick={incQty}>
                 <AiOutlinePlus />
               </span>
             </p>

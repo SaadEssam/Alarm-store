@@ -23,3 +23,13 @@ export interface HomeProps {
   products: Products[];
   bannerData: Banner[];
 }
+
+export interface StateContextProps {
+  showCart: boolean;
+  cartItem: number;
+  totalPrice: number;
+  totalQuantities: number;
+  qty: number;
+  incQty: () => void;
+  decQty: () => void;
+}
