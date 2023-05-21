@@ -26,6 +26,7 @@ export interface HomeProps {
 
 export interface StateContextProps {
   showCart: boolean;
+  setShowCart: (value: boolean) => void;
   cartItems: any[];
   totalPrice: number;
   totalQuantities: number;

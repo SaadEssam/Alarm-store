@@ -17,7 +17,7 @@ export const StateContext = ({ children }: { children: React.ReactNode }) => {
     );
 
     setTotalPrice(
-      (prevTotalPrice) => prevTotalPrice + product.price + quantity
+      (prevTotalPrice) => prevTotalPrice + product.price * quantity
     );
     setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + quantity);
 
@@ -51,6 +51,7 @@ export const StateContext = ({ children }: { children: React.ReactNode }) => {
   };
   const contextValue: StateContextProps = {
     showCart,
+    setShowCart,
     cartItems,
     totalPrice,
     totalQuantities,
