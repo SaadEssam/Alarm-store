@@ -26,10 +26,11 @@ export interface HomeProps {
 
 export interface StateContextProps {
   showCart: boolean;
-  cartItem: number;
+  cartItems: any[];
   totalPrice: number;
   totalQuantities: number;
   qty: number;
   incQty: () => void;
   decQty: () => void;
+  onAdd: (product: any, quantity: number) => void;
 }

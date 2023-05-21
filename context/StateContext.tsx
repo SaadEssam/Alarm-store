@@ -6,10 +6,38 @@ const Context = createContext<StateContextProps | undefined>(undefined);
 
 export const StateContext = ({ children }: { children: React.ReactNode }) => {
   const [showCart, setShowCart] = useState(false);
-  const [cartItem, setCartItem] = useState<number>(0);
+  const [cartItems, setCartItems] = useState<Array<any>>([]);
   const [totalPrice, setTotalPrice] = useState<number>(0);
   const [totalQuantities, setTotalQuantities] = useState<number>(0);
-  const [qty, setQty] = useState(1);
+  const [qty, setQty] = useState<number>(1);
+
+  const onAdd = (product: any, quantity: number) => {
+    const checkProductInCart = cartItems.find(
+      (item) => item._id === product._id
+    );
+
+    setTotalPrice(
+      (prevTotalPrice) => prevTotalPrice + product.price + quantity
+    );
+    setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + quantity);
+
+    if (checkProductInCart) {
+      const updatedCartItems = cartItems.map((cartProduct) => {
+        if (cartProduct._id === product._id)
+          return {
+            ...cartProduct,
+            quantity: cartProduct.quantity + quantity,
+          };
+      });
+
+      setCartItems(updatedCartItems);
+    } else {
+      product.quantity = quantity;
+      setCartItems([...cartItems, { ...product }]);
+    }
+
+    toast.success(`${qty} ${product.name} Added to the cart`);
+  };
 
   const incQty = () => {
     setQty((prevQty) => prevQty + 1);
@@ -23,12 +51,13 @@ export const StateContext = ({ children }: { children: React.ReactNode }) => {
   };
   const contextValue: StateContextProps = {
     showCart,
-    cartItem,
+    cartItems,
     totalPrice,
     totalQuantities,
     qty,
     incQty,
     decQty,
+    onAdd,
   };
 
   return <Context.Provider value={contextValue}>{children}</Context.Provider>;
