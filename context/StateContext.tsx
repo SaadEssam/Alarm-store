@@ -11,6 +11,9 @@ export const StateContext = ({ children }: { children: React.ReactNode }) => {
   const [totalQuantities, setTotalQuantities] = useState<number>(0);
   const [qty, setQty] = useState<number>(1);
 
+  let foundProduct: any;
+  let index;
+
   const onAdd = (product: any, quantity: number) => {
     const checkProductInCart = cartItems.find(
       (item) => item._id === product._id
@@ -39,6 +42,30 @@ export const StateContext = ({ children }: { children: React.ReactNode }) => {
     toast.success(`${qty} ${product.name} Added to the cart`);
   };
 
+  const toggleCartItemQuantity = (id: string, value: string) => {
+    foundProduct = cartItems.find((item) => item._id === id);
+    index = cartItems.findIndex((product) => product._id === id);
+    const newCartItems = cartItems.filter((item) => item._id !== id);
+
+    if (value === "inc") {
+      setCartItems([
+        ...newCartItems,
+        { ...foundProduct, quantity: foundProduct.quantity + 1 },
+      ]);
+      setTotalPrice((prevTotalPrice) => prevTotalPrice + foundProduct.price);
+      setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + 1);
+    } else if (value === "dec") {
+      if (foundProduct.quantity > 1) {
+        setCartItems([
+          ...newCartItems,
+          { ...foundProduct, quantity: foundProduct.quantity - 1 },
+        ]);
+        setTotalPrice((prevTotalPrice) => prevTotalPrice - foundProduct.price);
+        setTotalQuantities((prevTotalQuantities) => prevTotalQuantities - 1);
+      }
+    }
+  };
+
   const incQty = () => {
     setQty((prevQty) => prevQty + 1);
   };
@@ -59,6 +86,7 @@ export const StateContext = ({ children }: { children: React.ReactNode }) => {
     incQty,
     decQty,
     onAdd,
+    toggleCartItemQuantity,
   };
 
   return <Context.Provider value={contextValue}>{children}</Context.Provider>;
