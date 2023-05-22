@@ -34,5 +34,24 @@ export interface StateContextProps {
   incQty: () => void;
   decQty: () => void;
   onAdd: (product: any, quantity: number) => void;
+  onRemove: (product: any) => void;
   toggleCartItemQuantity: (id: string, value: string) => void;
+}
+
+interface ProductProps {
+  _updatedAt: string;
+  Details: string;
+  slug: {
+    current: string;
+    _type: string;
+  };
+  image: {}[];
+  name: string;
+  price: number;
+  quantity: number;
+  _createdAt: string;
+  _id: string;
+  _rev: string;
+  _type: string;
+  _updatedAt: string;
 }

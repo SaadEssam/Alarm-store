@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
-import { StateContextProps } from "@/typings";
+import { ProductProps, StateContextProps } from "@/typings";
 import { toast } from "react-hot-toast";
 
 const Context = createContext<StateContextProps | undefined>(undefined);
@@ -14,7 +14,7 @@ export const StateContext = ({ children }: { children: React.ReactNode }) => {
   let foundProduct: any;
   let index;
 
-  const onAdd = (product: any, quantity: number) => {
+  const onAdd = (product: ProductProps, quantity: number) => {
     const checkProductInCart = cartItems.find(
       (item) => item._id === product._id
     );
@@ -40,6 +40,21 @@ export const StateContext = ({ children }: { children: React.ReactNode }) => {
     }
 
     toast.success(`${qty} ${product.name} Added to the cart`);
+  };
+
+  const onRemove = (product: ProductProps) => {
+    foundProduct = cartItems.find((item) => item._id === product._id);
+    const newCartItems = cartItems.filter((item) => item._id !== product._id);
+
+    setTotalPrice(
+      (prevTotalPrice) =>
+        prevTotalPrice - foundProduct.price * foundProduct.quantity
+    );
+    setTotalQuantities(
+      (prevTotalQuantities) => prevTotalQuantities - foundProduct.quantity
+    );
+    setCartItems(newCartItems);
+    console.log(product);
   };
 
   const toggleCartItemQuantity = (id: string, value: string) => {
@@ -86,6 +101,7 @@ export const StateContext = ({ children }: { children: React.ReactNode }) => {
     incQty,
     decQty,
     onAdd,
+    onRemove,
     toggleCartItemQuantity,
   };
 

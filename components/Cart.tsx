@@ -20,6 +20,7 @@ const Cart = () => {
     totalQuantities,
     cartItems,
     setShowCart,
+    onRemove,
     toggleCartItemQuantity,
   } = useStateContext();
   return (
@@ -86,7 +87,11 @@ const Cart = () => {
                         </span>
                       </p>
                     </div>
-                    <button type="button" className="remove-item">
+                    <button
+                      type="button"
+                      className="remove-item"
+                      onClick={() => onRemove(item)}
+                    >
                       <AiTwotoneDelete />
                     </button>
                   </div>
