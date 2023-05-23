@@ -54,7 +54,6 @@ export const StateContext = ({ children }: { children: React.ReactNode }) => {
       (prevTotalQuantities) => prevTotalQuantities - foundProduct.quantity
     );
     setCartItems(newCartItems);
-    console.log(product);
   };
 
   const toggleCartItemQuantity = (id: string, value: string) => {

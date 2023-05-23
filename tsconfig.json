@@ -34,7 +34,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-, "lib/sanity.js"  ],
+, "lib/sanity.js", "pages/api/stripe.ts"  ],
   "exclude": [
     "node_modules"
   ]
