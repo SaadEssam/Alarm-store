@@ -387,7 +387,8 @@ a {
   align-items: center;
   justify-content: space-around;
 }
-.success-wrapper img {
+.success-wrapper img,
+.cancel-wrapper img {
   width: 500px;
 }
 
@@ -400,22 +401,20 @@ a {
   flex-direction: column;
 }
 
-.success h2 {
+.success h2,
+.cancel h2 {
   text-transform: capitalize;
   margin-top: 15px 0px;
   font-weight: 900;
   font-size: 45px;
   color: #324d67;
 }
-.success .email-msg {
+.success .email-msg,
+.cancel .email-msg {
   font-size: 20px;
   font-weight: 600;
   margin-top: 15px;
   text-align: center;
-}
-.cancel p {
-  font-size: 20px;
-  font-weight: 600;
 }
 .success .description {
   font-size: 16px;
@@ -428,6 +427,7 @@ a {
   margin-left: 5px;
   color: #f02d34;
 }
+
 .product-max-qty {
   margin-top: 10px;
 }
