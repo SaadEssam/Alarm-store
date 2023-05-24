@@ -13,7 +13,13 @@ import { useStateContext } from "@/context/StateContext";
 
 const ProductDetails: React.FC<Products> = ({ product, products }: any) => {
   const [index, setIndex] = useState(0);
-  const { decQty, incQty, qty, onAdd }: StateContextProps = useStateContext();
+  const { decQty, incQty, qty, onAdd, setShowCart }: StateContextProps =
+    useStateContext();
+
+  const handleBuyNow = () => {
+    onAdd(product, qty);
+    setShowCart(true);
+  };
 
   return (
     <div>
@@ -78,7 +84,7 @@ const ProductDetails: React.FC<Products> = ({ product, products }: any) => {
             >
               Add to Cart
             </button>
-            <button type="button" className="buy-now">
+            <button type="button" className="buy-now" onClick={handleBuyNow}>
               Buy Now
             </button>
           </div>
