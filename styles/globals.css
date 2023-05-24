@@ -6,8 +6,6 @@ body,
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
   font-family: "IBM Plex Sans", sans-serif;
 }
 
@@ -33,7 +31,6 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* margin: 6px 18px; */
   position: fixed;
   top: 0;
   left: 0;
@@ -78,17 +75,17 @@ a {
 
 .hero-banner-container {
   padding: 100px 40px;
-  background: #ee9ca7; /* fallback for old browsers */
+  background: #ee9ca7;
   background: -webkit-linear-gradient(
     to right,
     #ffdde1,
     #ee9ca7
-  ); /* Chrome 10-25, Safari 5.1-6 */
+  );
   background: linear-gradient(
     to right,
     #ffdde1,
     #ee9ca7
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  );
 
   border-radius: 15px;
   position: relative;
@@ -104,7 +101,6 @@ a {
 .footer-banner-container button {
   border-radius: 15px;
   padding: 10px 16px;
-  /* background-color: #f02d34; */
   background: linear-gradient(
     157.81deg,
     #fadede -43.27%,
@@ -264,12 +260,7 @@ a {
   margin-top: 30px;
   color: #f02d34;
 }
-/* .price .old-price,
-.product-price .old-price,
-.price .old-price {
-  color: gray;
-  text-decoration: line-through;
-} */
+
 .quantity {
   display: flex;
   gap: 20px;
@@ -435,7 +426,23 @@ a {
 /* Footer Banner */
 .footer-banner-container {
   padding: 100px 40px;
-  /* background-color: #f02d34; */
+  background: rgb(255, 0, 0);
+  background: -moz-linear-gradient(
+    351deg,
+    rgba(255, 0, 0, 0.3926820728291317) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background: -webkit-linear-gradient(
+    351deg,
+    rgba(255, 0, 0, 0.3926820728291317) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background: linear-gradient(
+    351deg,
+    rgba(255, 0, 0, 0.3926820728291317) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff0000",endColorstr="#ffffff",GradientType=1);
   border-radius: 15px;
   position: relative;
   height: 400px;
@@ -443,9 +450,6 @@ a {
   width: 100%;
   margin-top: 120px;
   margin-bottom: 120px;
-  /**/
-  /* border: 1px solid hsl(0, 100%, 50%); */
-  background: url(/assets/footer-banner.png);
 
   background-position: bottom left;
   background-repeat: no-repeat;
@@ -494,8 +498,6 @@ a {
   right: 0;
   top: 0;
   z-index: 100;
-  /* will-change: transform; */
-  /* transition: all 1s ease-in-out; */
 }
 .cart-container {
   height: 100vh;
@@ -606,7 +608,6 @@ a {
 }
 
 /* Footer Styles */
-
 .footer {
   background-color: #fff;
   display: flex;
