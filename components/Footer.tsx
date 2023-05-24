@@ -24,8 +24,8 @@ const Footer = () => {
         <div className="footer-links_div">
           <h4>Get in touch</h4>
           <p>Mostafa El-Nahaas, Nasr City, Cairo Governorate</p>
-          <p>085-132567</p>
-          <p>info@alarmstore.com</p>
+          <a href="tel:+123xxx7890">+123xxx7890</a>
+          <a href="mailto:info@alarmstore.com">info@alarmstore.com</a>
         </div>
       </div>
       <div className="footer-copyright">

@@ -662,7 +662,8 @@ a {
   margin-bottom: 1rem;
 }
 
-.footer-links_div p {
+.footer-links_div p,
+.footer-links_div a {
   font-size: 13px;
   font-weight: 500;
   line-height: 14px;
@@ -671,7 +672,8 @@ a {
   cursor: pointer;
 }
 
-.footer-links_div p:hover {
+.footer-links_div p:hover,
+.footer-links_div a:hover {
   color: #f02d34;
   transition: 0.5s ease;
 }
@@ -798,6 +800,10 @@ a {
   }
   .desc {
     bottom: 60px;
+  }
+  .product-detail-container {
+    display: flex;
+    flex-direction: column;
   }
   .product-detail-container .product-detail-image {
     width: 350px;
