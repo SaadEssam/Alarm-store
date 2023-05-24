@@ -36,6 +36,9 @@ export interface StateContextProps {
   onAdd: (product: any, quantity: number) => void;
   onRemove: (product: any) => void;
   toggleCartItemQuantity: (id: string, value: string) => void;
+  setCartItems;
+  setTotalPrice;
+  setTotalQuantities;
 }
 
 interface ProductProps {

@@ -102,6 +102,9 @@ export const StateContext = ({ children }: { children: React.ReactNode }) => {
     onAdd,
     onRemove,
     toggleCartItemQuantity,
+    setCartItems,
+    setTotalPrice,
+    setTotalQuantities,
   };
 
   return <Context.Provider value={contextValue}>{children}</Context.Provider>;
