@@ -6,7 +6,7 @@ const Product = ({ product }: any) => {
   return (
     <div>
       <Link href={`/product/${product.slug.current}`}>
-        <div className="scale-100 cursor-pointer pb-6 text-sky-950 transition-transform duration-500 ease-in-out hover:scale-110">
+        <div className="scale-100 cursor-pointer pb-6 text-sky-900 transition-transform duration-500 ease-in-out hover:scale-110">
           <img
             src={urlFor(product.image && product.image[0]).url()}
             alt={product.name}

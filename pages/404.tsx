@@ -12,8 +12,8 @@ const Error = () => {
       <h1 className="bg-gradient-to-br from-red-600 to-red-900 bg-clip-text sm:text-9xl md:text-[300px] font-semibold text-transparent">
         404
       </h1>
-      <h3 className="text-xl">Sorry, but this page does not exist.</h3>
-      <Link href="/" className="Go-Home">
+      <h3 className="text-xl font-semibold">Sorry, but this page does not exist.</h3>
+      <Link href="/" className="primary-btn mt-0">
         Homepage
       </Link>
     </div>

@@ -61,13 +61,13 @@ const Cart = () => {
         </button>
 
         {cartItems.length < 1 && (
-          <div className="m-40 text-center">
+          <div className="m-40 text-center flex flex-col items-center">
             <AiOutlineShoppingCart size={150} />
-            <h3 className="text-xl font-medium">Your Shopping cart is empty</h3>
+            <h3 className="text-2xl font-medium">Your Shopping cart is empty</h3>
             <Link href="/">
               <button
                 type="button"
-                className="btn"
+                className="primary-btn w-52"
                 onClick={() => setShowCart(false)}
               >
                 Continue Shopping
@@ -76,11 +76,11 @@ const Cart = () => {
           </div>
         )}
 
-        <div className="mt-15 max-h-70vh overflow-auto px-5 py-10">
+        <div className="mt-4 max-h-screen overflow-auto px-2 py-5">
           {cartItems.length >= 1 &&
             cartItems.map((item) => (
               <div
-                className="gap-30 flex border-b border-gray-300 p-20"
+                className="gap-5 flex border-b border-gray-300 p-3"
                 key={item._id}
               >
                 <img
@@ -88,25 +88,25 @@ const Cart = () => {
                   className="h-1/6 w-1/6 rounded-lg bg-gray-200"
                   alt={item.name}
                 />
-                <div className="item-desc">
-                  <div className="flex flex-wrap justify-between gap-4 text-sky-950">
+                <div className="">
+                  <div className="flex flex-wrap justify-between w-[350px] gap-4 text-sky-900">
                     <h5 className="text-xl font-medium">{item.name}</h5>
                     <h4 className="text-lg font-medium">{item.price} EGP</h4>
                   </div>
-                  <div className="mt-10">
+                  <div className="mt-10 flex justify-between">
                     <div>
-                      <p className="quantity-desc">
+                      <p className="p-1 border-solid border border-gray-300 text-lg py-1 px-3 flex items-center gap-5">
                         <span
-                          className="minus"
+                          className="text-red-500 cursor-pointer"
                           onClick={() =>
                             toggleCartItemQuantity(item._id, "dec")
                           }
                         >
                           <AiOutlineMinus />
                         </span>
-                        <span className="num">{item.quantity}</span>
+                        <span className="text-xl font-medium">{item.quantity}</span>
                         <span
-                          className="plus"
+                          className="text-green-500 cursor-pointer"
                           onClick={() =>
                             toggleCartItemQuantity(item._id, "inc")
                           }
@@ -128,13 +128,17 @@ const Cart = () => {
             ))}
         </div>
         {cartItems.length >= 1 && (
-          <div className="absolute bottom-3 right-1 w-full px-16 py-7">
+          <div className="absolute bottom-3 right-1 w-full px-16 py-7 ">
             <div className="flex justify-between text-xl font-semibold">
               <h3>Subtotal:</h3>
               <h3>{totalPrice} EGP</h3>
             </div>
-            <div className="w-96 m-auto">
-              <button type="button" className="btn" onClick={handleCheckout}>
+            <div className="m-auto w-96">
+              <button
+                type="button"
+                className="primary-btn w-96 uppercase"
+                onClick={handleCheckout}
+              >
                 Pay with Stripe
               </button>
             </div>
