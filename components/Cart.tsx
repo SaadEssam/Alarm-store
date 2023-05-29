@@ -45,22 +45,25 @@ const Cart = () => {
   };
 
   return (
-    <div className="cart-wrapper" ref={cartRef}>
-      <div className="cart-container slide-right">
+    <div
+      className="z-100 fixed right-0 top-0 h-screen w-screen bg-black bg-opacity-50"
+      ref={cartRef}
+    >
+      <div className="w-600 slide-right relative float-right h-screen bg-white px-5 py-20">
         <button
           type="button"
-          className="cart-heading"
+          className="ml-5 flex cursor-pointer items-center gap-2 border-none bg-transparent text-lg font-medium"
           onClick={() => setShowCart(false)}
         >
           <AiOutlineLeft />
-          <span className="heading">Your Cart</span>
-          <span className="cart-num-items">({totalQuantities} items)</span>
+          <span>Your Cart</span>
+          <span className="text-red-500">({totalQuantities} items)</span>
         </button>
 
         {cartItems.length < 1 && (
-          <div className="empty-cart">
-            <AiOutlineShoppingCart size={130} />
-            <h3>Your Shopping cart is empty</h3>
+          <div className="m-40 text-center">
+            <AiOutlineShoppingCart size={150} />
+            <h3 className="text-xl font-medium">Your Shopping cart is empty</h3>
             <Link href="/">
               <button
                 type="button"
@@ -73,20 +76,24 @@ const Cart = () => {
           </div>
         )}
 
-        <div className="product-container">
+        <div className="mt-15 max-h-70vh overflow-auto px-5 py-10">
           {cartItems.length >= 1 &&
             cartItems.map((item) => (
-              <div className="product" key={item._id}>
+              <div
+                className="gap-30 flex border-b border-gray-300 p-20"
+                key={item._id}
+              >
                 <img
                   src={urlFor(item?.image[0]).url()}
-                  className="cart-product-image"
+                  className="h-1/6 w-1/6 rounded-lg bg-gray-200"
+                  alt={item.name}
                 />
                 <div className="item-desc">
-                  <div className="flex top">
-                    <h5>{item.name}</h5>
-                    <h4>{item.price} EGP</h4>
+                  <div className="flex flex-wrap justify-between gap-4 text-sky-950">
+                    <h5 className="text-xl font-medium">{item.name}</h5>
+                    <h4 className="text-lg font-medium">{item.price} EGP</h4>
                   </div>
-                  <div className="flex bottom">
+                  <div className="mt-10">
                     <div>
                       <p className="quantity-desc">
                         <span
@@ -110,7 +117,7 @@ const Cart = () => {
                     </div>
                     <button
                       type="button"
-                      className="remove-item"
+                      className="duration-400 border-0 bg-transparent text-2xl text-red-600 transition ease-in-out hover:text-red-500"
                       onClick={() => onRemove(item)}
                     >
                       <AiTwotoneDelete />
@@ -121,12 +128,12 @@ const Cart = () => {
             ))}
         </div>
         {cartItems.length >= 1 && (
-          <div className="cart-bottom">
-            <div className="total">
+          <div className="absolute bottom-3 right-1 w-full px-16 py-7">
+            <div className="flex justify-between text-xl font-semibold">
               <h3>Subtotal:</h3>
               <h3>{totalPrice} EGP</h3>
             </div>
-            <div className="btn-container">
+            <div className="w-96 m-auto">
               <button type="button" className="btn" onClick={handleCheckout}>
                 Pay with Stripe
               </button>

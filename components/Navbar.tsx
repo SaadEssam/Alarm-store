@@ -10,17 +10,19 @@ const Navbar = () => {
     useStateContext();
 
   return (
-    <div className="navbar-container">
+    <div className="fixed left-0 right-0 top-0 z-50 flex items-center justify-between bg-white px-16 py-4 shadow-md">
       <Link href="/">
-        <img src="/assets/logo.png" alt="logo" className="logo-img" />
+        <img src="/assets/logo.png" alt="logo" className="w-100 h-10" />
       </Link>
       <button
         type="button"
-        className="cart-icon"
+        className="duration-400 relative border-none bg-transparent text-2xl text-gray-500 transition-transform ease-in-out hover:scale-110 hover:text-red-500"
         onClick={() => setShowCart(true)}
       >
         <AiOutlineShoppingCart />
-        <span className="cart-item-qty">{totalQuantities}</span>
+        <span className="absolute -top-1 left-4 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-xs font-semibold text-gray-100">
+          {totalQuantities}
+        </span>
       </button>
 
       {showCart && <Cart />}

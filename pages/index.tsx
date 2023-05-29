@@ -19,11 +19,13 @@ const Home: React.FC<HomeProps> = ({ products, bannerData }) => {
         />
       </Head>
       <HeroBanner heroBanner={bannerData.length && bannerData[1]} />
-      <div className="products-heading">
-        <h2>Best Seller Products</h2>
-        <p>speaker there are many variations passages</p>
+      <div className="mx-0 my-10 text-center text-sky-900">
+        <h2 className="text-4xl font-extrabold">Best Seller Products</h2>
+        <p className="text-base font-light">
+          speaker there are many variations passages
+        </p>
       </div>
-      <div className="products-container">
+      <div className="mt-5 flex w-full flex-wrap justify-center gap-4">
         {products?.map((product) => (
           <Product key={product._id} product={product} />
         ))}
