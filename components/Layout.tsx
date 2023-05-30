@@ -9,18 +9,18 @@ type Props = {
 };
 const Layout = ({ children }: Props) => {
   return (
-      <div className="layout">
-        <Head>
-          <title>Alarm Store</title>
-        </Head>
-        <header>
-          <Navbar />
-        </header>
-        <main className="main-container">{children}</main>
-        <footer>
-          <Footer />
-        </footer>
-      </div>
+    <div>
+      <Head>
+        <title>Alarm Store</title>
+      </Head>
+      <header>
+        <Navbar />
+      </header>
+      <main className="m-auto w-full max-w-[1400px]">{children}</main>
+      <footer>
+        <Footer />
+      </footer>
+    </div>
   );
 };
 

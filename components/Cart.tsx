@@ -49,10 +49,10 @@ const Cart = () => {
       className="z-100 fixed right-0 top-0 h-screen w-screen bg-black bg-opacity-50"
       ref={cartRef}
     >
-      <div className="w-600 slide-right relative float-right h-screen bg-white px-5 py-20">
+      <div className="w-600 slide-right relative float-right h-screen w-[550px] bg-white px-5 py-20">
         <button
           type="button"
-          className="ml-5 flex cursor-pointer items-center gap-2 border-none bg-transparent text-lg font-medium"
+          className="flex cursor-pointer items-center gap-2 border-none bg-transparent text-lg font-medium"
           onClick={() => setShowCart(false)}
         >
           <AiOutlineLeft />
@@ -85,13 +85,13 @@ const Cart = () => {
               >
                 <img
                   src={urlFor(item?.image[0]).url()}
-                  className="h-1/6 w-1/6 rounded-lg bg-gray-200"
+                  className="h-1/4 w-1/4 rounded-lg bg-gray-200"
                   alt={item.name}
                 />
                 <div className="">
                   <div className="flex flex-wrap justify-between w-[350px] gap-4 text-sky-900">
-                    <h5 className="text-xl font-medium">{item.name}</h5>
-                    <h4 className="text-lg font-medium">{item.price} EGP</h4>
+                    <h5 className="text-2xl font-semibold">{item.name}</h5>
+                    <h4 className="text-lg font-semibold">{item.price} EGP</h4>
                   </div>
                   <div className="mt-10 flex justify-between">
                     <div>
@@ -104,7 +104,7 @@ const Cart = () => {
                         >
                           <AiOutlineMinus />
                         </span>
-                        <span className="text-xl font-medium">{item.quantity}</span>
+                        <span className="text-xl font-medium text-sky-900">{item.quantity}</span>
                         <span
                           className="text-green-500 cursor-pointer"
                           onClick={() =>

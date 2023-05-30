@@ -42,14 +42,14 @@ const ProductDetails: React.FC<Products> = ({ product, products }: any) => {
                 key={i}
                 src={urlFor(item).url()}
                 className={
-                  i === index ? "small-image selected-image" : "small-image"
+                  i === index ? "bg-gray-200 w-20 h-20 cursor-pointer rounded-xl hover:bg-rose-100" : "bg-gray-200 w-20 h-20 cursor-pointer rounded-xl"
                 }
                 onMouseEnter={() => setIndex(i)}
               />
             ))}
           </div>
         </div>
-        <div className="product-details-desc">
+        <div>
           <h1 className="text-3xl font-extrabold">{product.name}</h1>
           <div className="text-red-500 mt-3 gap-1 flex items-center">
             <div className="flex items-center">
