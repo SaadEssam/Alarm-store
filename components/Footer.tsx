@@ -5,14 +5,10 @@ import { BsInstagram, BsFacebook, BsTwitter, BsLinkedin } from "react-icons/bs";
 const Footer = () => {
   return (
     <div className="flex flex-col items-center justify-center bg-white px-16 py-8">
-      <div className="flex w-full flex-row flex-wrap items-start justify-between text-left">
-        <div className="m-4 flex w-72 flex-col">
+      <div className="flex w-full flex-wrap items-start justify-between space-y-3 text-left sm:flex-col md:flex-row">
+        <div className="flex w-72 flex-col sm:m-0 md:m-4">
           <Link href="/">
-            <img
-              src="/assets/logo.png"
-              className="w-100 mb-4 h-20"
-              alt="logo"
-            />
+            <img src="/assets/logo.png" className="w-82 mb-4 h-14" alt="logo" />
           </Link>
           <p className="text-sm font-medium text-black">
             The Apple items, solutions or devices are located at the alarm shop.
@@ -27,7 +23,7 @@ const Footer = () => {
           <p className="custom-footer-links">Privacy Policy</p>
           <p className="custom-footer-links">Terms and Conditions</p>
         </div>
-        <div className="flex flex-col justify-start w-80">
+        <div className="flex w-80 flex-col justify-start">
           <h4 className="mb-4 text-base font-semibold text-black">
             Get in touch
           </h4>
@@ -42,16 +38,16 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      <div className="mt-8 flex w-full items-center justify-between border-t border-black pt-4">
-        <p className="text-xs font-medium text-gray-500">
+      <div className="mt-8 flex w-full items-center justify-between border-t border-black pt-4 sm:flex-col md:flex-row">
+        <p className="text-xs font-medium text-gray-500 sm:order-2 sm:pt-3 md:order-2">
           &copy; {new Date().getFullYear()} Alarm Store. All Rights Reserved.
         </p>
-        <div className="mr-3 flex cursor-pointer gap-2 text-base text-gray-500">
+        <div className="mr-3 flex cursor-pointer gap-2 text-base text-gray-500 sm:order-1 md:order-2">
           <a
             href="https://instagram.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-all hover:text-red-500"
+            className="transition-all hover:text-primary"
           >
             <BsInstagram />
           </a>
@@ -59,7 +55,7 @@ const Footer = () => {
             href="https://facebook.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-all hover:text-red-500"
+            className="transition-all hover:text-primary"
           >
             <BsFacebook />
           </a>
@@ -67,7 +63,7 @@ const Footer = () => {
             href="https://twitter.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-all hover:text-red-500"
+            className="transition-all hover:text-primary"
           >
             <BsTwitter />
           </a>
@@ -75,7 +71,7 @@ const Footer = () => {
             href="https://linkedin.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-all hover:text-red-500"
+            className="transition-all hover:text-primary"
           >
             <BsLinkedin />
           </a>

@@ -19,7 +19,7 @@ const Home: React.FC<HomeProps> = ({ products, bannerData }) => {
         />
       </Head>
       <HeroBanner heroBanner={bannerData.length && bannerData[1]} />
-      <div className="mx-0 my-10 text-center text-sky-900">
+      <div className="mx-0 my-10 text-center text-secondary">
         <h2 className="text-4xl font-extrabold">Best Seller Products</h2>
         <p className="text-base font-light">
           speaker there are many variations passages

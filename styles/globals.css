@@ -1,25 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;700&family=Poppins:wght@300;400;500;600&display=swap");
 
-html,
-body,
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-family: "IBM Plex Sans", sans-serif;
-}
 
-body {
+/* body {
   background-color: #f9f5ff;
-}
+} */
 /* 
 ::-webkit-scrollbar {
   width: 0px;
 } */
-a {
+/* a {
   color: inherit;
   text-decoration: none;
-}
+} */
 
 /* .main-container {
   max-width: 1400px;
@@ -336,12 +328,12 @@ a {
   color: #324d67;
   margin: 50px;
 } */
-.marquee {
+/* .marquee {
   position: relative;
   height: 400px;
   width: 100%;
   overflow-x: hidden;
-}
+} */
 .track {
   position: absolute;
   white-space: nowrap;
@@ -360,12 +352,12 @@ a {
     transform: translateX(-50%);
   }
 }
-.related-products-container {
+/* .related-products-container {
   display: flex;
   justify-content: center;
   gap: 15px;
   margin-top: 20px;
-}
+} */
 
 /* success, cancel page */
 /* .success-wrapper,
@@ -745,7 +737,7 @@ a {
 
 /*-------------------------------------------------------------------------------------------------------------*/
 @media screen and (max-width: 800px) {
-  .hero-banner-container {
+  /* .hero-banner-container {
     height: 560px;
   }
   .hero-banner-image {
@@ -800,16 +792,16 @@ a {
   }
   .desc {
     bottom: 60px;
-  }
-  .product-detail-container {
+  } */
+  /* .product-detail-container {
     display: flex;
     flex-direction: column;
-  }
-  .product-detail-container .product-detail-image {
+  } */
+  /* .product-detail-container .product-detail-image {
     width: 350px;
     height: 350px;
-  }
-  .cart-container {
+  } */
+  /* .cart-container {
     width: 415px;
     padding: 4px;
   }
@@ -831,7 +823,7 @@ a {
   }
   .buttons .buy-now {
     width: 150px;
-  }
+  } */
   /* 
   .item-desc .flex {
     width: 200px;
@@ -840,7 +832,7 @@ a {
     flex-wrap: wrap;
     gap: 10px;
   } */
-  .item-desc .bottom {
+  /* .item-desc .bottom {
     margin-top: 30px;
   }
   .flex h5 {
@@ -857,12 +849,12 @@ a {
 
   .total h3 {
     font-size: 16px;
-  }
+  } */
   .track {
     animation: marquee 10s linear infinite;
     width: 550%;
   }
-  .success-wrapper,
+  /* .success-wrapper,
   .cancel-wrapper {
     min-height: 69vh;
   }
@@ -881,11 +873,11 @@ a {
   .btn-container {
     width: 300px;
     margin: auto;
-  }
+  } */
 }
 
 /* animation slide-right */
-@-webkit-keyframes slide-right {
+/* @-webkit-keyframes slide-right {
   0% {
     -webkit-transform: translateX(0);
     transform: translateX(0);
@@ -911,15 +903,22 @@ a {
     reverse both;
   animation: slide-right 0.5s cubic-bezier(0.755, 0.05, 0.855, 0.06) reverse
     both;
-}
+} */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    font-family: "IBM Plex Sans", sans-serif;
+    background-color: #f9f5ff;
+  }
+}
+
 @layer components {
   .custom-footer-links {
-    @apply mx-0 my-2 cursor-pointer text-sm font-medium text-gray-500 transition-all hover:text-red-500;
+    @apply mx-0 my-2 cursor-pointer text-sm font-medium text-gray-500 transition-all hover:text-primary;
   }
   .footer-banner-gradient {
     background: rgb(255, 0, 0);
@@ -943,13 +942,13 @@ a {
     background-repeat: no-repeat;
   }
   .primary-btn {
-    @apply mt-10 cursor-pointer rounded-full border-0 bg-red-500 px-5 py-3 text-lg font-medium text-white transition-all duration-500 ease-in-out hover:bg-red-400;
+    @apply mt-10 cursor-pointer rounded-full border-0 bg-primary px-5 py-3 text-lg font-medium text-white transition-all duration-500 ease-in-out hover:bg-candy;
   }
   .secondary-btn {
-    @apply mt-10 w-52 cursor-pointer rounded-full border border-solid border-red-500 bg-transparent px-5 py-3 text-lg font-medium text-red-500 duration-500 ease-in-out hover:bg-red-500 hover:text-white hover:transition-all;
+    @apply mt-10 w-52 cursor-pointer rounded-full border border-solid border-primary bg-transparent px-5 py-3 text-lg font-medium text-primary duration-500 ease-in-out hover:bg-primary hover:text-white hover:transition-all;
   }
   .banner-btn {
-    @apply mt-10 cursor-pointer rounded-2xl bg-gradient-to-r from-red-400 to-red-500 px-4 py-3 text-lg font-medium text-white
+    @apply mt-10 cursor-pointer rounded-2xl bg-gradient-to-r from-candy to-primary px-4 py-3 text-lg font-medium text-white
     transition-all duration-500 hover:drop-shadow-2xl;
   }
 }

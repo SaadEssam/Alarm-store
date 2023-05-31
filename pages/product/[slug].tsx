@@ -27,22 +27,24 @@ const ProductDetails: React.FC<Products> = ({ product, products }: any) => {
         <title>{product.name} | Alarm Store</title>
         <meta name="description" content={`Check out '${product.details}'.`} />
       </Head>
-      <div className="flex gap-10 m-10 text-sky-900 mt-24">
+      <div className="m-10 mt-24 flex gap-10 text-secondary sm:flex-wrap">
         <div>
           <div className="image-container">
             <img
               src={urlFor(product.image && product.image[index]).url()}
               alt={product.name}
-              className="bg-gray-200 rounded-2xl w-[400px] h-[400px] cursor-pointer transition-all duration-300 ease-in-out hover:bg-rose-100"
+              className="cursor-pointer rounded-2xl bg-gray-200 transition-all duration-300 ease-in-out hover:bg-rose-100 sm:h-[350px] sm:w-[350px] md:h-[400px] md:w-[400px]"
             />
           </div>
-          <div className="flex gap-2 mt-5">
+          <div className="mt-5 flex gap-2">
             {product.image.map((item: React.ReactNode, i: number) => (
               <img
                 key={i}
                 src={urlFor(item).url()}
                 className={
-                  i === index ? "bg-gray-200 w-20 h-20 cursor-pointer rounded-xl hover:bg-rose-100" : "bg-gray-200 w-20 h-20 cursor-pointer rounded-xl"
+                  i === index
+                    ? "h-20 w-20 cursor-pointer rounded-xl bg-gray-200 hover:bg-rose-100"
+                    : "h-20 w-20 cursor-pointer rounded-xl bg-gray-200"
                 }
                 onMouseEnter={() => setIndex(i)}
               />
@@ -51,7 +53,7 @@ const ProductDetails: React.FC<Products> = ({ product, products }: any) => {
         </div>
         <div>
           <h1 className="text-3xl font-extrabold">{product.name}</h1>
-          <div className="text-red-500 mt-3 gap-1 flex items-center">
+          <div className="mt-3 flex items-center gap-1 text-primary">
             <div className="flex items-center">
               <AiFillStar />
               <AiFillStar />
@@ -59,19 +61,23 @@ const ProductDetails: React.FC<Products> = ({ product, products }: any) => {
               <AiFillStar />
               <AiOutlineStar />
             </div>
-            <p className="text-sky-900 mt-0">(20)</p>
+            <p className="mt-0 text-secondary">(20)</p>
           </div>
           <h4 className="font-bold">Details:</h4>
-          <p className="mt-2 w-[800px] text-base font-base">{product.details}</p>
-          <p className="text-3xl font-bold mt-8 text-red-500">{product.price} EGP</p>
-          <div className="flex items-center gap-5 mt-3">
+          <p className="sm:w-82 font-base mt-2 text-base md:w-[800px]">
+            {product.details}
+          </p>
+          <p className="mt-8 text-3xl font-bold text-primary">
+            {product.price} EGP
+          </p>
+          <div className="mt-3 flex items-center gap-5">
             <h3 className="font-bold">Quantity:</h3>
-            <p className="p-1 border-solid border border-gray-300 text-lg py-1 px-3 flex items-center gap-5">
-              <span className="text-red-500 cursor-pointer" onClick={decQty}>
+            <p className="flex items-center gap-5 border border-solid border-gray-300 p-1 px-3 py-1 text-lg">
+              <span className="cursor-pointer text-primary" onClick={decQty}>
                 <AiOutlineMinus />
               </span>
               <span className="text-xl font-medium">{qty}</span>
-              <span className="text-green-500 cursor-pointer" onClick={incQty}>
+              <span className="cursor-pointer text-green-500" onClick={incQty}>
                 <AiOutlinePlus />
               </span>
             </p>
@@ -95,9 +101,11 @@ const ProductDetails: React.FC<Products> = ({ product, products }: any) => {
         </div>
       </div>
       <div className="mt-28">
-        <h2 className="text-2xl font-bold m-12 capitalize text-sky-900 text-center">related products</h2>
-        <div className="marquee">
-          <div className="related-products-container track">
+        <h2 className="m-12 text-center text-2xl font-bold capitalize text-secondary">
+          related products
+        </h2>
+        <div className="relative h-96 w-full overflow-x-hidden mb-3">
+          <div className="flex justify-center gap-4 mt-5 track">
             {products.map((item: any) => (
               <Product key={item._id} product={item} />
             ))}

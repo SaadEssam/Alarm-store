@@ -16,11 +16,11 @@ const Navbar = () => {
       </Link>
       <button
         type="button"
-        className="duration-400 relative border-none bg-transparent text-2xl text-gray-500 transition-transform ease-in-out hover:scale-110 hover:text-red-500"
+        className="duration-400 relative border-none bg-transparent text-2xl text-gray-500 transition-transform ease-in-out hover:scale-110 hover:text-primary"
         onClick={() => setShowCart(true)}
       >
         <AiOutlineShoppingCart />
-        <span className="absolute -top-1 left-4 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-xs font-semibold text-gray-100">
+        <span className="absolute -top-1 left-4 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-xs font-semibold text-gray-100">
           {totalQuantities}
         </span>
       </button>

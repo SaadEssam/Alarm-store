@@ -49,7 +49,7 @@ const Cart = () => {
       className="z-100 fixed right-0 top-0 h-screen w-screen bg-black bg-opacity-50"
       ref={cartRef}
     >
-      <div className="w-600 slide-right relative float-right h-screen w-[550px] bg-white px-5 py-20">
+      <div className="w-600 animate-fade-left animate-once animate-ease-in-out relative float-right h-screen w-[550px] bg-white px-5 py-20">
         <button
           type="button"
           className="flex cursor-pointer items-center gap-2 border-none bg-transparent text-lg font-medium"
@@ -57,13 +57,15 @@ const Cart = () => {
         >
           <AiOutlineLeft />
           <span>Your Cart</span>
-          <span className="text-red-500">({totalQuantities} items)</span>
+          <span className="text-primary">({totalQuantities} items)</span>
         </button>
 
         {cartItems.length < 1 && (
-          <div className="m-40 text-center flex flex-col items-center">
+          <div className="m-40 flex flex-col items-center text-center">
             <AiOutlineShoppingCart size={150} />
-            <h3 className="text-2xl font-medium">Your Shopping cart is empty</h3>
+            <h3 className="text-2xl font-medium">
+              Your Shopping cart is empty
+            </h3>
             <Link href="/">
               <button
                 type="button"
@@ -80,7 +82,7 @@ const Cart = () => {
           {cartItems.length >= 1 &&
             cartItems.map((item) => (
               <div
-                className="gap-5 flex border-b border-gray-300 p-3"
+                className="flex gap-5 border-b border-gray-300 p-3"
                 key={item._id}
               >
                 <img
@@ -89,24 +91,26 @@ const Cart = () => {
                   alt={item.name}
                 />
                 <div className="">
-                  <div className="flex flex-wrap justify-between w-[350px] gap-4 text-sky-900">
+                  <div className="flex w-[350px] flex-wrap justify-between gap-4 text-secondary">
                     <h5 className="text-2xl font-semibold">{item.name}</h5>
                     <h4 className="text-lg font-semibold">{item.price} EGP</h4>
                   </div>
                   <div className="mt-10 flex justify-between">
                     <div>
-                      <p className="p-1 border-solid border border-gray-300 text-lg py-1 px-3 flex items-center gap-5">
+                      <p className="flex items-center gap-5 border border-solid border-gray-300 p-1 px-3 py-1 text-lg">
                         <span
-                          className="text-red-500 cursor-pointer"
+                          className="cursor-pointer text-primary"
                           onClick={() =>
                             toggleCartItemQuantity(item._id, "dec")
                           }
                         >
                           <AiOutlineMinus />
                         </span>
-                        <span className="text-xl font-medium text-sky-900">{item.quantity}</span>
+                        <span className="text-xl font-medium text-secondary">
+                          {item.quantity}
+                        </span>
                         <span
-                          className="text-green-500 cursor-pointer"
+                          className="cursor-pointer text-green-500"
                           onClick={() =>
                             toggleCartItemQuantity(item._id, "inc")
                           }
@@ -117,7 +121,7 @@ const Cart = () => {
                     </div>
                     <button
                       type="button"
-                      className="duration-400 border-0 bg-transparent text-2xl text-red-600 transition ease-in-out hover:text-red-500"
+                      className="duration-400 border-0 bg-transparent text-2xl text-red-600 transition ease-in-out hover:text-primary"
                       onClick={() => onRemove(item)}
                     >
                       <AiTwotoneDelete />

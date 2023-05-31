@@ -6,7 +6,15 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'primary': "#ef4444",
+        'secondary': "#0c4a6e",
+        'candy': "#f87171",
+      },
+    },
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss-animated')
+  ],
 };

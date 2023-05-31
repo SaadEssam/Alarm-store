@@ -15,7 +15,7 @@ const HeroBanner = ({ heroBanner }: any) => {
         <img
           src={urlFor(heroBanner.image).url()}
           alt="banner image"
-          className="absolute -top-1 end-1 right-1/4 h-[550px] w-[550px] transition-all duration-500 hover:drop-shadow-2xl"
+          className="absolute sm:bottom-0 md:-top-1 sm:end-3 md:end-1 right-1/4 sm:h-80 sm:w-80 md:h-[550px] md:w-[550px] transition-all duration-500 hover:drop-shadow-2xl"
         />
 
         <div>
@@ -24,7 +24,7 @@ const HeroBanner = ({ heroBanner }: any) => {
               {heroBanner.buttonText}
             </button>
           </Link>
-          {/* <div className="absolute bottom-3 right-4 flex w-96 flex-col leading-5 text-sky-900 p-3">
+          {/* <div className="absolute bottom-3 right-4 flex w-96 flex-col leading-5 text-secondary p-3">
             <h5 className="mb-3 self-end text-lg font-semibold">Description</h5>
             <p className="text-end font-normal text-gray-500">
               {heroBanner.description}

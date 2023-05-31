@@ -18,25 +18,27 @@ const Success = () => {
   }, []);
 
   return (
-    <div className="flex h-screen items-center justify-around">
+    <div className="flex items-center justify-around sm:mt-52 sm:h-full sm:flex-col md:mt-0 md:h-screen md:flex-row">
       <div className="flex flex-col items-center justify-center space-y-5 rounded-2xl text-center">
-        <h2 className="mt-4 text-5xl font-extrabold capitalize text-sky-900">
+        <h2 className="mt-4 font-extrabold capitalize text-secondary sm:text-3xl md:text-5xl">
           Thank you for your order!
         </h2>
-        <p className="font-semibold text-xl">Check your email inbox for the receipt.</p>
-        <p className="m-3 text-base font-semibold">
+        <p className="font-semibold sm:text-lg md:text-xl">
+          Check your email inbox for the receipt.
+        </p>
+        <p className="m-3 font-semibold sm:text-sm md:text-base">
           If you have any questions, please email
-          <a className="ml-1 text-red-500" href="mailto:info@alarmstore.com">
+          <a className="ml-1 text-primary" href="mailto:info@alarmstore.com">
             info@alarmstore.com
           </a>
         </p>
         <Link href="/">
-          <button type="button" className="primary-btn w-96">
+          <button type="button" className="primary-btn sm:w-52 md:w-96">
             Continue Shopping
           </button>
         </Link>
       </div>
-      <div>
+      <div className="sm:mt-11 md:mt-0">
         <img
           src="/assets/success-payment.png/"
           alt="success-payment"
