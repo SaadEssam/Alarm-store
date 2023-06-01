@@ -12,6 +12,8 @@ import toast from "react-hot-toast";
 import { useStateContext } from "@/context/StateContext";
 import { urlFor } from "@/lib/sanity";
 import getStripe from "@/lib/getStripe";
+import { formatPriceInEGP } from "@/lib/priceFormatter";
+
 
 const Cart = () => {
   const cartRef = useRef<HTMLDivElement>(null);
@@ -93,7 +95,7 @@ const Cart = () => {
                 <div className="">
                   <div className="flex w-[350px] flex-wrap justify-between gap-4 text-secondary">
                     <h5 className="text-2xl font-semibold">{item.name}</h5>
-                    <h4 className="text-lg font-semibold">{item.price} EGP</h4>
+                    <h4 className="text-lg font-semibold">{formatPriceInEGP(item.price)}</h4>
                   </div>
                   <div className="mt-10 flex justify-between">
                     <div>
@@ -135,7 +137,7 @@ const Cart = () => {
           <div className="absolute bottom-3 right-1 w-full px-16 py-7 ">
             <div className="flex justify-between text-xl font-semibold">
               <h3>Subtotal:</h3>
-              <h3>{totalPrice} EGP</h3>
+              <h3>{formatPriceInEGP(totalPrice)}</h3>
             </div>
             <div className="m-auto w-96">
               <button

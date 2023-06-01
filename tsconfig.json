@@ -34,7 +34,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-, "lib/sanity.js", "pages/api/stripe.ts"  ],
+, "lib/sanity.js", "pages/api/stripe.ts", "lib/priceFormatter.js"  ],
   "exclude": [
     "node_modules"
   ]

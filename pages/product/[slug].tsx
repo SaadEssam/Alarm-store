@@ -10,6 +10,8 @@ import { sanityClient, urlFor } from "@/lib/sanity";
 import { Products, StateContextProps } from "@/typings";
 import Product from "@/components/Product";
 import { useStateContext } from "@/context/StateContext";
+import { formatPriceInEGP } from "@/lib/priceFormatter";
+
 
 const ProductDetails: React.FC<Products> = ({ product, products }: any) => {
   const [index, setIndex] = useState(0);
@@ -20,6 +22,7 @@ const ProductDetails: React.FC<Products> = ({ product, products }: any) => {
     onAdd(product, qty);
     setShowCart(true);
   };
+
 
   return (
     <div>
@@ -68,7 +71,7 @@ const ProductDetails: React.FC<Products> = ({ product, products }: any) => {
             {product.details}
           </p>
           <p className="mt-8 text-3xl font-bold text-primary">
-            {product.price} EGP
+            {formatPriceInEGP(product.price)}
           </p>
           <div className="mt-3 flex items-center gap-5">
             <h3 className="font-bold">Quantity:</h3>

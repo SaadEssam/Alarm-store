@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { urlFor } from "@/lib/sanity";
+import { formatPriceInEGP } from "@/lib/priceFormatter";
 
 const Product = ({ product }: any) => {
   return (
@@ -16,7 +17,7 @@ const Product = ({ product }: any) => {
           />
           <p className="text-base font-medium">{product.name}</p>
           <p className="mt-1 text-lg font-extrabold text-black">
-            {product.price} EGP
+            {formatPriceInEGP(product.price)}
           </p>
         </div>
       </Link>
