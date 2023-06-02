@@ -1,5 +1,7 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
+
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useStateContext } from "@/context/StateContext";
 import { Products, StateContextProps } from "@/typings";
@@ -12,7 +14,7 @@ const Navbar = () => {
   return (
     <div className="fixed left-0 right-0 top-0 z-50 flex items-center justify-between bg-white px-16 py-4 shadow-md">
       <Link href="/">
-        <img src="/assets/logo.png" alt="logo" className="w-100 h-10" />
+        <Image src="/assets/logo.webp" alt="logo" width={125} height={125} />
       </Link>
       <button
         type="button"

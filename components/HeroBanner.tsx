@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 import { urlFor } from "@/lib/sanity";
 
@@ -12,11 +13,14 @@ const HeroBanner = ({ heroBanner }: any) => {
         <h1 className="-ml-5 text-9xl font-semibold uppercase text-white">
           {heroBanner.largeText1}
         </h1>
-        <img
-          src={urlFor(heroBanner.image).url()}
-          alt="banner image"
-          className="absolute sm:bottom-0 md:-top-1 sm:end-3 md:end-1 right-1/4 sm:h-80 sm:w-80 md:h-[550px] md:w-[550px] transition-all duration-500 hover:drop-shadow-2xl"
-        />
+        <div className="absolute right-1/4 transition-all duration-500 hover:drop-shadow-2xl sm:bottom-0 sm:end-3 sm:h-80 sm:w-80 md:-top-1 md:end-1 md:h-[550px] md:w-[550px]">
+          <Image
+            src={urlFor(heroBanner.image).url()}
+            alt="banner image"
+            width={550}
+            height={550}
+          />
+        </div>
 
         <div>
           <Link href={`/product/${heroBanner.product}`}>

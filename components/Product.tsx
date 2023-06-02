@@ -1,5 +1,7 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
+
 import { urlFor } from "@/lib/sanity";
 import { formatPriceInEGP } from "@/lib/priceFormatter";
 
@@ -8,7 +10,7 @@ const Product = ({ product }: any) => {
     <div>
       <Link href={`/product/${product.slug.current}`}>
         <div className="scale-100 cursor-pointer pb-6 text-secondary transition-transform duration-500 ease-in-out hover:scale-110">
-          <img
+          <Image
             src={urlFor(product.image && product.image[0]).url()}
             alt={product.name}
             width={250}

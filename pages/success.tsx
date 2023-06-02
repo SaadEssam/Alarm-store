@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/router";
 
 import { useStateContext } from "@/context/StateContext";
@@ -39,10 +40,11 @@ const Success = () => {
         </Link>
       </div>
       <div className="sm:mt-11 md:mt-0">
-        <img
-          src="/assets/success-payment.png/"
+        <Image
+          src="/assets/success-payment.webp"
           alt="success-payment"
-          className="w-96"
+          width={450}
+          height={450}
         />
       </div>
     </div>

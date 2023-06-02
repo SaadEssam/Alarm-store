@@ -1,14 +1,21 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
+
 import { BsInstagram, BsFacebook, BsTwitter, BsLinkedin } from "react-icons/bs";
 
 const Footer = () => {
   return (
     <div className="flex flex-col items-center justify-center bg-white px-16 py-8">
       <div className="flex w-full flex-wrap items-start justify-between space-y-3 text-left sm:flex-col md:flex-row">
-        <div className="flex w-72 flex-col sm:m-0 md:m-4">
+        <div className="flex w-72 flex-col space-y-4 sm:m-0 md:m-4">
           <Link href="/">
-            <img src="/assets/logo.png" className="w-82 mb-4 h-14" alt="logo" />
+            <Image
+              src="/assets/logo.webp"
+              alt="logo"
+              width={150}
+              height={150}
+            />
           </Link>
           <p className="text-sm font-medium text-black">
             The Apple items, solutions or devices are located at the alarm shop.

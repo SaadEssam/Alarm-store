@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const Canceled = () => {
   return (
@@ -21,10 +22,11 @@ const Canceled = () => {
         </Link>
       </div>
       <div className="sm:mt-11 md:mt-0">
-        <img
-          src="/assets/cancel-payment.png/"
+        <Image
+          src="/assets/cancel-payment.webp"
           alt="cancel-payment"
-          className="w-96"
+          width={450}
+          height={450}
         />
       </div>
     </div>

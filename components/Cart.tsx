@@ -1,5 +1,7 @@
 import React, { useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
+
 import {
   AiOutlineMinus,
   AiOutlinePlus,
@@ -13,7 +15,6 @@ import { useStateContext } from "@/context/StateContext";
 import { urlFor } from "@/lib/sanity";
 import getStripe from "@/lib/getStripe";
 import { formatPriceInEGP } from "@/lib/priceFormatter";
-
 
 const Cart = () => {
   const cartRef = useRef<HTMLDivElement>(null);
@@ -51,7 +52,7 @@ const Cart = () => {
       className="z-100 fixed right-0 top-0 h-screen w-screen bg-black bg-opacity-50"
       ref={cartRef}
     >
-      <div className="w-600 animate-fade-left animate-once animate-ease-in-out relative float-right h-screen w-[550px] bg-white px-5 py-20">
+      <div className="w-600 relative float-right h-screen w-[550px] animate-fade-left bg-white px-5 py-20 animate-once animate-ease-in-out">
         <button
           type="button"
           className="flex cursor-pointer items-center gap-2 border-none bg-transparent text-lg font-medium"
@@ -87,15 +88,19 @@ const Cart = () => {
                 className="flex gap-5 border-b border-gray-300 p-3"
                 key={item._id}
               >
-                <img
+                <Image
                   src={urlFor(item?.image[0]).url()}
-                  className="h-1/4 w-1/4 rounded-lg bg-gray-200"
                   alt={item.name}
+                  width={100}
+                  height={100}
+                  className="rounded-lg bg-gray-200"
                 />
                 <div className="">
                   <div className="flex w-[350px] flex-wrap justify-between gap-4 text-secondary">
                     <h5 className="text-2xl font-semibold">{item.name}</h5>
-                    <h4 className="text-lg font-semibold">{formatPriceInEGP(item.price)}</h4>
+                    <h4 className="text-lg font-semibold">
+                      {formatPriceInEGP(item.price)}
+                    </h4>
                   </div>
                   <div className="mt-10 flex justify-between">
                     <div>

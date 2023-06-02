@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 import Head from "next/head";
+import Image from "next/image";
+
 import {
   AiOutlineMinus,
   AiOutlinePlus,
   AiFillStar,
   AiOutlineStar,
 } from "react-icons/ai";
-import { sanityClient, urlFor } from "@/lib/sanity";
-import { Products, StateContextProps } from "@/typings";
-import Product from "@/components/Product";
-import { useStateContext } from "@/context/StateContext";
-import { formatPriceInEGP } from "@/lib/priceFormatter";
 
+import Product from "@/components/Product";
+import { sanityClient, urlFor } from "@/lib/sanity";
+import { formatPriceInEGP } from "@/lib/priceFormatter";
+import { Products, StateContextProps } from "@/typings";
+import { useStateContext } from "@/context/StateContext";
 
 const ProductDetails: React.FC<Products> = ({ product, products }: any) => {
   const [index, setIndex] = useState(0);
@@ -23,7 +25,6 @@ const ProductDetails: React.FC<Products> = ({ product, products }: any) => {
     setShowCart(true);
   };
 
-
   return (
     <div>
       <Head>
@@ -32,22 +33,26 @@ const ProductDetails: React.FC<Products> = ({ product, products }: any) => {
       </Head>
       <div className="m-10 mt-24 flex gap-10 text-secondary sm:flex-wrap">
         <div>
-          <div className="image-container">
-            <img
+          <div className="cursor-pointer rounded-2xl bg-gray-200 transition-all duration-300 ease-in-out hover:bg-rose-100 sm:h-[350px] sm:w-[350px] md:h-[400px] md:w-[400px]">
+            <Image
               src={urlFor(product.image && product.image[index]).url()}
               alt={product.name}
-              className="cursor-pointer rounded-2xl bg-gray-200 transition-all duration-300 ease-in-out hover:bg-rose-100 sm:h-[350px] sm:w-[350px] md:h-[400px] md:w-[400px]"
+              width={400}
+              height={400}
             />
           </div>
           <div className="mt-5 flex gap-2">
             {product.image.map((item: React.ReactNode, i: number) => (
-              <img
+              <Image
                 key={i}
                 src={urlFor(item).url()}
+                alt={product.name}
+                width={80}
+                height={80}
                 className={
                   i === index
-                    ? "h-20 w-20 cursor-pointer rounded-xl bg-gray-200 hover:bg-rose-100"
-                    : "h-20 w-20 cursor-pointer rounded-xl bg-gray-200"
+                    ? "cursor-pointer rounded-xl bg-gray-200 hover:bg-rose-100"
+                    : "cursor-pointer rounded-xl bg-gray-200"
                 }
                 onMouseEnter={() => setIndex(i)}
               />
@@ -107,8 +112,8 @@ const ProductDetails: React.FC<Products> = ({ product, products }: any) => {
         <h2 className="m-12 text-center text-2xl font-bold capitalize text-secondary">
           related products
         </h2>
-        <div className="relative h-96 w-full overflow-x-hidden mb-3">
-          <div className="flex justify-center gap-4 mt-5 track">
+        <div className="relative mb-3 h-96 w-full overflow-x-hidden">
+          <div className="track mt-5 flex justify-center gap-4">
             {products.map((item: any) => (
               <Product key={item._id} product={item} />
             ))}
