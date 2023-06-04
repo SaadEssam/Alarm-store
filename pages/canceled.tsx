@@ -10,7 +10,7 @@ const Canceled = () => {
           Payment Failed!
         </h2>
         <p className="text-center font-semibold sm:text-lg md:text-xl">
-          We're sorry, but your payment has been canceled.
+          Oh sorry, but your payment has been canceled.
         </p>
         <p className="text-center font-semibold sm:text-sm md:text-base">
           Please try again later or use another payment method.
